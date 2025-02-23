@@ -1,24 +1,39 @@
-'use cliente'
+'use server'
 
 import { createClient } from '@/lib/db/client'
+import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
+import { JSX } from 'react'
 
 export default async function Page() {
+  //TODO move to api?
   const supabase = await createClient()
-  console.log('Supabase client initialized:', supabase)
-  const { data } = await supabase.from('userSupplier').select('*')
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from('userSupplier')
-    .update({ name: 'piano' })
-    .eq('id', 1)
-
+    .select('*')
+    .limit(1)
+  // TODO: control errors properly in here
   if (error) {
     console.error('Error fetching data:', error)
   } else {
     console.log('Fetched data:', data)
   }
+
+  const displaySupplyList = (supplyList: string): JSX.Element[] => {
+    const supplyListArray = supplyList.split(',')
+    return supplyListArray.map((supply, index) => (
+      <li key={index}>{supplyListMatcher(supply)}</li>
+    ))
+  }
+
   return (
     <>
-      {data?.map((user) => user.name)}
+      {data?.map((user) => (
+        <div key={user.id}>
+          <h1>{user.name}</h1>
+          <ul>{displaySupplyList(user.supplyList)}</ul>
+          <img src={user.imageUrl} alt={`${user.name}'s profile`} />
+        </div>
+      ))}
     </>
   )
 }
