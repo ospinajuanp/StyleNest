@@ -1,4 +1,4 @@
-import '@/styles/globals.css'; // O verifica que este archivo importe `resetStyle.css`
+import '@/styles/globals.css';
 
 export default function DashboardLayout({
   children,
@@ -8,8 +8,6 @@ export default function DashboardLayout({
   return (
     <html lang="es">
       <body>
-        {/* Layout UI */}
-        {/* Place children where you want to render a page or nested layout */}
         <main>{children}</main>
       </body>
     </html>

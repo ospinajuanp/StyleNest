@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /*
-    1. Posicionamiento
-    2. Modelo de caja
-    3. Tipografía
-    4. Visuales
-    5. Otros
 */
 ::-webkit-scrollbar {
   width: 0.8rem;
