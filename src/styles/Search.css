@@ -1,0 +1,27 @@
+.form{
+    display: flex;
+    justify-content: center;   
+    margin: 1rem;
+    width: auto;
+    height: 10vh;
+}
+
+.form-search {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    width: 100%;
+    height: 8vh;
+    border-radius: .5rem;
+    background-color: var(--color-primary);
+    padding: 1rem;
+}
+
+.form-icon{
+    position: absolute;
+    top: 3rem;
+    right:3rem;
+    width: auto;
+    height: 4vh;
+    color: var(--color-secondary);
+}

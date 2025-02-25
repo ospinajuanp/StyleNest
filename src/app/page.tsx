@@ -4,6 +4,7 @@ import { createClient } from '@/lib/db/client'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 import { JSX } from 'react'
 
+
 export default async function Page() {
   //TODO move to api?
   const supabase = await createClient()
@@ -27,13 +28,13 @@ export default async function Page() {
 
   return (
     <>
-      {data?.map((user) => (
+      {/* {data?.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
           <ul>{displaySupplyList(user.supplyList)}</ul>
           <img src={user.imageUrl} alt={`${user.name}'s profile`} />
         </div>
-      ))}
+      ))} */}
     </>
   )
 }
