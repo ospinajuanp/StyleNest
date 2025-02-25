@@ -4,14 +4,21 @@
 ::-webkit-scrollbar {
   width: 0.8rem;
   border-radius: 4px;
-  background-color: #5f5f5f;
+  background-color: var(--color-text);
 }
 
 /* Here we define custom properties */
 :root {
   /* Here we define color*/
-  --color-primary:#181818;
-  --color-secondary:#f0f0f0;
+  --color-primary:#ff6f61;
+  --color-secondary:#6b5b95;
+  --color-accent:#88b04b;
+  --color-text:#212121;
+  --color-background:#f7f7f7;
+
+
+
+
   /* Here we define typography*/
   --typography-primary: Helvetica,arial,sans-serif;
   --typography-secondary: Verdana;
@@ -20,16 +27,22 @@
 /* Here we define dark mode*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary:#f0f0f0;
-    --color-secondary:#181818;
+    --color-primary:#ff8a7a ;
+    --color-secondary:#8478b3 ;
+    --color-accent:#9ccb64 ;
+    --color-text:#181818 ;
+    --color-background:#e0e0e0 ;
   }
 }
 /* Optional */
 /* Here we define Contrast High */
 @media (prefers-contrast: high) {
   :root {
-    --color-primary:#000;
-    --color-secondary:#fff;
+    --color-primary:#ff2d00 ;
+    --color-secondary:#3d348b ;
+    --color-accent:#aad400 ;
+    --color-text:#ffffff;
+    --color-background:#000000;
   }
 }
 /* Disable the animations in case the user has configured the mode without animation.  */
@@ -95,8 +108,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 /* We configure the text we select */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 /* We level typography and form placement problems. */
@@ -129,8 +142,8 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--typography-primary);
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  color: var(--color-text);
+  background-color: var(--color-background);
   /* Optional */
   line-height: 1.4em;
   hyphens: auto;
@@ -141,3 +154,17 @@ body {
 }
 
 /*# sourceMappingURL=resetStyle.css.map */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Body Text */
+body, p, span, li {
+  font-family: 'Lato', sans-serif;
+}
+
+/* Accent or UI Elements */
+.button, .navbar {
+  font-family: 'Montserrat', sans-serif;
+}

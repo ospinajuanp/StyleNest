@@ -3,7 +3,6 @@
     justify-content: center;   
     margin: 1rem;
     width: auto;
-    height: 10vh;
 }
 
 .form-search {
@@ -13,15 +12,16 @@
     width: 100%;
     height: 8vh;
     border-radius: .5rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-text);
     padding: 1rem;
+    font-weight: 700;
 }
 
 .form-icon{
     position: absolute;
-    top: 3rem;
+    top: 8rem;
     right:3rem;
     width: auto;
     height: 4vh;
-    color: var(--color-secondary);
+    color: var(--color-background);
 }

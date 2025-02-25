@@ -3,7 +3,7 @@
 import { createClient } from '@/lib/db/client'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 import { JSX } from 'react'
-
+import Nav from '@/components/Nav'
 
 export default async function Page() {
   //TODO move to api?
@@ -28,6 +28,7 @@ export default async function Page() {
 
   return (
     <>
+    <Nav/>  
       {/* {data?.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>

@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-import Search from '@/components/Search'
 
 export default function DashboardLayout({
   children,
@@ -9,7 +8,6 @@ export default function DashboardLayout({
   return (
     <html lang="es">
       <body>
-        <Search />
         <main>{children}</main>
         
       </body>
