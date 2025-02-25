@@ -10,7 +10,7 @@ export default async function Page() {
   const { data, error } = await supabase
     .from('userSupplier')
     .select('*')
-    .limit(1)
+    .limit(2)
   // TODO: control errors properly in here
   if (error) {
     console.error('Error fetching data:', error)
@@ -31,6 +31,7 @@ export default async function Page() {
         <div key={user.id}>
           <h1>{user.name}</h1>
           <ul>{displaySupplyList(user.supplyList)}</ul>
+          <p>{user.description}</p>
           <img src={user.imageUrl} alt={`${user.name}'s profile`} />
         </div>
       ))}
