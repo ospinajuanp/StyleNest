@@ -19,12 +19,9 @@
     overflow: hidden;
     overflow-x: auto;
     padding: 1rem;
-    
-    /* Efecto de deslizamiento como Instagram */
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
-/* Ocultar scrollbar en navegadores modernos */
 .supplier-list::-webkit-scrollbar {
     display: none;
 }
@@ -32,16 +29,15 @@
     scrollbar-width: none; /* Firefox */
 }
 
-/* Estilos para cada tarjeta */
 .supplier-list > * {
-    flex: 0 0 auto; /* Evita que cambie de tamaño */
-    width: 5rem; /* Ajusta el tamaño de cada historia */
-    height: 6rem; /* Altura similar a Instagram */
+    flex: 0 0 auto;
+    width: 5rem; 
+    height: 6rem; 
     display: flex;
     align-items: center;
     justify-content: center;
     border: .1rem solid var(--color-primary);
     border-radius: .5rem;
     font-weight: bold;
-    scroll-snap-align: center; /* Hace que cada tarjeta encaje al deslizar */
+    scroll-snap-align: center; 
 }
