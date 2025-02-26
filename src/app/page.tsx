@@ -1,5 +1,6 @@
 'use server'
 
+import SupplierContainer from '@/components/SupplierContainer'
 import { createClient } from '@/lib/db/client'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 import { JSX } from 'react'
@@ -25,8 +26,23 @@ export default async function Page() {
     ))
   }
 
+    const x = [{
+      img: "🍕",
+      text: "Pizzas"
+    },
+    {
+      img: "🐈",
+      text: "Gato"
+    },
+    {
+      img: "🐕",
+      text: "Perro"
+    },
+    ]
+
   return (
     <>
+      <SupplierContainer data={x}/>  
       {data?.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
