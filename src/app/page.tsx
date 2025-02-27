@@ -29,13 +29,13 @@ export default async function Page() {
   return (
     <>
     <Nav/>  
-      {/* {data?.map((user) => (
+      {data?.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
           <ul>{displaySupplyList(user.supplyList)}</ul>
           <img src={user.imageUrl} alt={`${user.name}'s profile`} />
         </div>
-      ))} */}
+      ))}
     </>
   )
 }
