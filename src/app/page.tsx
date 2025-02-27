@@ -42,6 +42,7 @@ export default async function Page() {
 
   return (
     <>
+    
       <SupplierContainer data={x}/>  
       {data?.map((user) => (
         <div key={user.id}>
