@@ -9,8 +9,9 @@ export default async function Page() {
   const supabase = await createClient()
   const { data, error } = await supabase
     .from('userSupplier')
-    .select('*')
-    .limit(2)
+    .select("*")
+    .textSearch('description', `Barber`)
+  // .limit(2)
   // TODO: control errors properly in here
   if (error) {
     console.error('Error fetching data:', error)
