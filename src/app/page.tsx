@@ -1,7 +1,8 @@
 'use server'
 
+import SupplierContainer from '@/components/SupplierContainer'
 import { JSX } from 'react'
-import { getAllUserSuppliers, searchUserSupplierByKeyword } from '@/lib/api'
+import { getAllUserSuppliers } from '@/lib/api'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 
 export default async function Page(): Promise<JSX.Element> {
@@ -14,8 +15,23 @@ export default async function Page(): Promise<JSX.Element> {
     ))
   }
 
+  const x = [{
+    img: "🍕",
+    text: "Pizzas"
+  },
+  {
+    img: "🐈",
+    text: "Gato"
+  },
+  {
+    img: "🐕",
+    text: "Perro"
+  },
+  ]
+
   return (
     <>
+      <SupplierContainer data={x} />
       {data?.map((user) => (
         <div key={user.id}>
           <h1>{user.name}</h1>
