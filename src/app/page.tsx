@@ -1,23 +1,11 @@
 'use server'
 
-import { createClient } from '@/lib/db/client'
-import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 import { JSX } from 'react'
+import { getAllUserSuppliers, searchUserSupplierByKeyword } from '@/lib/api'
+import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 
-export default async function Page() {
-  //TODO move to api?
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from('userSupplier')
-    .select("*")
-    .textSearch('description', `Barber`)
-  // .limit(2)
-  // TODO: control errors properly in here
-  if (error) {
-    console.error('Error fetching data:', error)
-  } else {
-    console.log('Fetched data:', data)
-  }
+export default async function Page(): Promise<JSX.Element> {
+  const { data, error } = await getAllUserSuppliers();
 
   const displaySupplyList = (supplyList: string): JSX.Element[] => {
     const supplyListArray = supplyList.split(',')
