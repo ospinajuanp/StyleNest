@@ -1,9 +1,10 @@
 'use server'
 
-import SupplierContainer from '@/components/SupplierContainer'
 import { JSX } from 'react'
 import { getAllUserSuppliers } from '@/lib/api'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
+import SupplierContainer from '@/components/SupplierContainer'
+import Nav from '@/components/Nav'
 
 export default async function Page(): Promise<JSX.Element> {
   const { data, error } = await getAllUserSuppliers();
@@ -31,6 +32,7 @@ export default async function Page(): Promise<JSX.Element> {
 
   return (
     <>
+      <Nav />
       <SupplierContainer data={x} />
       {data?.map((user) => (
         <div key={user.id}>
