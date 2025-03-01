@@ -9,6 +9,7 @@ export default function DashboardLayout({
     <html lang="es">
       <body>
         <main>{children}</main>
+        
       </body>
     </html>
   )
