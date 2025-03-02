@@ -1,6 +1,8 @@
 import { createClient } from "./db/client"
+
 // TODO: control errors properly in here
 // Avoid select *
+// Research for proper use of server db client
 export const getAllUserSuppliers = async () => {
   const supabase = await createClient()
   const { data, error } = await supabase
