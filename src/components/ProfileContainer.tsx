@@ -1,13 +1,14 @@
 import '@/styles/ProfileContainer.css'
+import '@/styles/CommonTopStyles.css'
 import ProfileCard from './ProfileCard';
 
 const ProfileContainer = ({ data }: { data: Array<{ created_at: string; description: string; id: number; imageUrl: string; name: string; supplyList: string }> }) => {
     return (
-        <div className='profile'>
-            <div className='profile-title'>
+        <div className='container'>
+            <div className='container-title '>
                 <h2>Top Profiles</h2>
             </div>
-            <div className='profile-list'>
+            <div className='container-list profile-list'>
                 {/* {data.map((profile, index) => {
                     console.log(profile)
                     return (

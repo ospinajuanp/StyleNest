@@ -20,8 +20,8 @@ const Profile = ({ profile }: { profile: { created_at: string; description: stri
 
 
     return (
-        <div className='profile-card'>
-            <div className='profile-card-img'>
+        <div className='profile-card container-card'>
+            <div className='container-card-img profile-card-img'>
                 <img src={profile.imageUrl} alt="" />
             </div>
             <div className='profile-card-text'>
