@@ -4,7 +4,7 @@
     align-items: center;
     margin: 1rem;
     width: auto;
-    position: relative; /* Necesario para posicionar elementos dentro */
+    position: relative;
 }
 
 .form-search {
@@ -14,7 +14,7 @@
     background-color: var(--color-text);
     padding: 1rem;
     font-weight: 700;
-    padding-right: 3rem; /* Espacio para el ícono */
+    padding-right: 3rem;
 }
 
 .form-icon {
