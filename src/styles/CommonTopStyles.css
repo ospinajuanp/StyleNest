@@ -29,7 +29,7 @@
 }
 
 .container-list {
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
 
 .container-list > *{
