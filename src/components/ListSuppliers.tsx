@@ -11,11 +11,19 @@ const displaySupplyList = (supplyList: string): JSX.Element[] => {
   ))
 }
 
-export interface ListSuppliersProps {
-  data: any[] | null; // TODO type well xD
+export interface Supplier {
+  id: string;
+  name: string;
+  supplyList: string;
+  description: string;
+  imageUrl: string;
 }
 
-export default  function ListSuppliers({ data }: ListSuppliersProps) {
+export interface ListSuppliersProps {
+  data: Supplier[] | null; // TODO type well xD
+}
+
+export default function ListSuppliers({ data }: ListSuppliersProps) {
   return (
     <>
       {data?.map((user) => (

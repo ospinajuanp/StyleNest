@@ -3,8 +3,9 @@
 import '@/styles/SupplierContainer.css'
 
 import SupplierCard from './SupplierCard'
+import { Supplier } from './ListSuppliers';
 
-const SupplierContainer = ({ data }: { data: Array<{ img: string; text: string; }> }) => {
+const SupplierContainer = (data: Supplier[]) => {
 
   return (
     <div className='supplier'>
@@ -13,7 +14,7 @@ const SupplierContainer = ({ data }: { data: Array<{ img: string; text: string; 
       </div>
       <div className='supplier-list'>
         {data.map((supplier, index) => (
-          <SupplierCard key={index} img={supplier.img} text={supplier.text} />
+          <SupplierCard key={index} img={supplier.imageUrl} text={supplier.name} />
         ))}
       </div>
     </div>

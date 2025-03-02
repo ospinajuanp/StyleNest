@@ -2,34 +2,20 @@
 
 import SupplierContainer from '@/components/SupplierContainer'
 import Nav from '@/components/Nav'
-import ListSuppliers, { ListSuppliersProps } from './ListSuppliers'
+import ListSuppliers, { ListSuppliersProps, Supplier } from './ListSuppliers'
 import { useState } from 'react'
 
 export default function MainPageSkeleton({ data }: ListSuppliersProps) {
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<Supplier[]>([]);
 
-  const x = [{
-    img: "🍕",
-    text: "Pizzas"
-  },
-  {
-    img: "🐈",
-    text: "Gato"
-  },
-  {
-    img: "🐕",
-    text: "Perro"
-  },
-  ]
-
-  const handleSearch = (results: any[]) => {
+  const handleSearch = (results: Supplier[]) => {
     setSearchResults(results);
   }
 
   return (
     <>
       <Nav onSearch={handleSearch} />
-      <SupplierContainer data={x} />
+      <SupplierContainer {...searchResults} />
       <ListSuppliers data={searchResults.length > 0 ? searchResults : data} />
     </>
   )

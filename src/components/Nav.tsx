@@ -1,11 +1,13 @@
 import '@/styles/Nav.css'
+
 import React from 'react';
 import Search from '@/components/Search'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Supplier } from './ListSuppliers';
 
 interface NavProps {
-  onSearch: (results: any[]) => void;
+  onSearch: (results: Supplier[]) => void;
 }
 
 const Nav: React.FC<NavProps> = ({ onSearch }) => {

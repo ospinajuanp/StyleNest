@@ -5,9 +5,10 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { searchUserSupplierByKeyword } from '@/lib/api'
+import { Supplier } from './ListSuppliers'
 
 interface SearchProps {
-  onSearch: (results: any[]) => void;
+  onSearch: (results: Supplier[]) => void;
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
@@ -20,7 +21,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     //TODO: handle error
-    const { data, error } = await searchUserSupplierByKeyword(searchTerm)
+    const { data } = await searchUserSupplierByKeyword(searchTerm)
     console.log(onSearch, data)
     onSearch(data ? data : [])
   }
