@@ -1,4 +1,4 @@
-'use server'
+// 'use server'
 
 import { getAllUserSuppliers } from '@/lib/api'
 import MainPageSkeleton from '@/components/MainPageSkeleton';

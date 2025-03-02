@@ -15,7 +15,7 @@ export default function MainPageSkeleton({ data }: ListSuppliersProps) {
   return (
     <>
       <Nav onSearch={handleSearch} />
-      <SupplierContainer {...searchResults} />
+      <SupplierContainer data={searchResults.length > 0 ? searchResults : data}/>
       <ListSuppliers data={searchResults.length > 0 ? searchResults : data} />
     </>
   )
