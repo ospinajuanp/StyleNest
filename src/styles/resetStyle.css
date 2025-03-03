@@ -2,9 +2,24 @@
 /*
 */
 ::-webkit-scrollbar {
-  width: 0.8rem;
-  border-radius: 4px;
-  background-color: var(--color-text);
+  width: 10px;
+  height: 10px;
+}
+
+/* Color de fondo del scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+/* Color de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+}
+
+/* Cambio de color al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
 }
 
 /* Here we define custom properties */
@@ -87,9 +102,9 @@ li {
 }
 
 /* We configure soft anchors */
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* Deactivate default styles of the main text labels */
 h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
