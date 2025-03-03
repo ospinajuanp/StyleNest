@@ -1,20 +1,33 @@
+// 'use server'
+
 import '@/styles/SupplierContainer.css'
+
 import SupplierCard from './SupplierCard'
+import { ListSuppliersProps } from './ListSuppliers';
 
-const SupplierContainer = ({ data }: { data: Array<{ img: string; text: string; }>}) => {
 
-    return (
-        <div className='container'>
-            <div className='container-title'>
-                <h2>Top Services</h2>
-            </div>
-            <div className='container-list supplier-list'>
-                {data.map((supplier,index) => (
-                    <SupplierCard key={index} img={supplier.img} text={supplier.text} />
-                ))}
-            </div>
+const SupplierContainer = ({ data }: ListSuppliersProps) => {
+
+    let supplierTop = ''
+    data?.map((supplier) => {
+        supplierTop = supplier.supplyList+',' + supplierTop
+        supplierTop = supplierTop.slice(0,-1)
+    })
+    let supplierResult = supplierTop.split(',')
+    
+
+  return (
+    <div className='container'>
+        <div className='container-title'>
+            <h2>Top Services</h2>
         </div>
-    );
+        <div className='container-list supplier-list'>
+            {supplierResult.map((supplier,index) => (
+                <SupplierCard key={index} text={supplier} />
+            ))}
+        </div>
+    </div>
+);
 };
 
 export default SupplierContainer;

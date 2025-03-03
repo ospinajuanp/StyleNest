@@ -4,7 +4,7 @@ import '@/styles/ProfileCard.css'
 import { useRouter } from 'next/navigation';
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
 
-const Profile = ({ profile }: { profile: { created_at: string; description: string; id: number; imageUrl: string; name: string; supplyList: string } }) => {
+const Profile = ({ profile } : { profile : any}) => {
     const router = useRouter();
 
     const goToProfile = () => {
@@ -18,9 +18,8 @@ const Profile = ({ profile }: { profile: { created_at: string; description: stri
     ))
     }
 
-
     return (
-        <div className='profile-card container-card'>
+        <div className='profile-card container-card' onClick={goToProfile}>
             <div className='container-card-img profile-card-img'>
                 <img src={profile.imageUrl} alt="" />
             </div>
