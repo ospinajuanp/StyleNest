@@ -2,8 +2,9 @@
 
 import { faArrowLeft, faCalendarDays,faClock, faLocationDot, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSearchParams, useRouter  } from 'next/navigation';
-import { use, useEffect, useState } from 'react';
+import { useRouter  } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import Image from "next/image";
 import './profile.css'
 
 export default function Page() {
@@ -53,22 +54,22 @@ export default function Page() {
             aboutContent.className = 'hidden';
 
         }
-    }, [profile,setProfile]);
+    }, [profile]);
 
     useEffect(() => {
         const servicesContent = document.getElementById('services-content');
-        services.length === 0 && servicesContent ? setServices([0]) : null
+        if (services.length === 0 && servicesContent) {
+            setServices([0]);
+        }
         if (servicesContent) {
             for (let i = 0; i < servicesContent.children.length; i++) {
                 servicesContent.children[i].className = 'item';
             }
         }
         services.forEach((service) => {
-            if (servicesContent) {
+            if (servicesContent && service < servicesContent.children.length) {
                 servicesContent.children[service].className = 'item selected';
             }
-
-            
         })
     }, [services]);
 
@@ -77,15 +78,17 @@ export default function Page() {
     };
 
     const toggleServices = (number: number) => {
-        services.indexOf(number) !== -1 ? setServices(services.filter((item) => item !== number)) : setServices([...services, number]);
+        if (services.indexOf(number) !== -1) {
+            setServices(services.filter((item) => item !== number));
+        } else {
+            setServices([...services, number]);
+        }
     };
 
     const goToProfile = () => {
         router.push(`/`); 
     };
     
-    const searchParams = useSearchParams();
-    const id = searchParams.get('id'); 
 
     return (
         <div className='profile'>
@@ -98,7 +101,7 @@ export default function Page() {
                     <div>PRICE</div>
                 </div>
                 <div className='profile-header_img'>
-                    <img src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage//barber.jpg" alt=""/>
+                    <Image src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage/barber.jpg" alt="Example" width={400} height={400} />
                 </div>
             </div>
 
@@ -157,10 +160,10 @@ export default function Page() {
                     Recent Works
                 </div>
                 <div className='profile-works_imgs'>
-                <div ><img src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage//barber.jpg" alt="" /></div>
-                    <div><img src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage//barber.jpg" alt="" /></div>
-                    <div><img src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage//barber.jpg" alt="" /></div>
-                    <div><img src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage//barber.jpg" alt="" /></div>
+                    <div ><Image src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage/barber.jpg" alt="Example" width={400} height={400} /></div>
+                    <div><Image src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage/barber.jpg" alt="Example" width={400} height={400} /></div>
+                    <div><Image src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage/barber.jpg" alt="Example" width={400} height={400} /></div>
+                    <div><Image src="https://rznkuhtjleowjbvrmztk.supabase.co/storage/v1/object/public/userSupplierImage/barber.jpg" alt="Example" width={400} height={400} /></div>
                 </div>
             </div>
 

@@ -4,5 +4,5 @@
 }
 
 .supplier-card-text {
-    font-size: clamp(.6rem, 1vw, .8rem);
+    font-size: .7rem;
 }

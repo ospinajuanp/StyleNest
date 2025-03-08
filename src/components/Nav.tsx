@@ -5,6 +5,7 @@ import Search from '@/components/Search'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Supplier } from './ListSuppliers';
+// import Image from "next/image";
 
 interface NavProps {
   onSearch: (results: Supplier[]) => void;
@@ -17,7 +18,8 @@ const Nav: React.FC<NavProps> = ({ onSearch }) => {
         <h1>Hi there</h1>
         <figure>
           <FontAwesomeIcon icon={faUser} />
-          {/* <img src="" alt="img text" /> */}
+
+          {/* <Image src="" alt="Example" width={400} height={400} /> */}
         </figure>
       </div>
       <Search onSearch={onSearch}/>
