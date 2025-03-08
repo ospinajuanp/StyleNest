@@ -13,7 +13,7 @@ const SupplierContainer = ({ data }: ListSuppliersProps) => {
         supplierTop = supplier.supplyList+',' + supplierTop
         supplierTop = supplierTop.slice(0,-1)
     })
-    let supplierResult = supplierTop.split(',')
+    const supplierResult = supplierTop.split(',')
     
 
   return (

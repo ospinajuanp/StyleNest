@@ -2,6 +2,7 @@
 
 import { JSX } from 'react'
 import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants'
+import Image from "next/image";
 import Link from 'next/link'
 
 const displaySupplyList = (supplyList: string): JSX.Element[] => {
@@ -12,11 +13,12 @@ const displaySupplyList = (supplyList: string): JSX.Element[] => {
 }
 
 export interface Supplier {
-  id: string;
+  id: number;
   name: string;
   supplyList: string;
   description: string;
   imageUrl: string;
+  created_at: string;
 }
 
 export interface ListSuppliersProps {
@@ -32,7 +34,7 @@ export default function ListSuppliers({ data }: ListSuppliersProps) {
           <ul>{displaySupplyList(user.supplyList)}</ul>
           <p>{user.description}</p>
           {/* TODO use next image */}
-          <img src={user.imageUrl} alt={`${user.name}'s profile`} />
+          <Image src={user.imageUrl} alt={`${user.name}'s profile`} width={400} height={400} />
         </Link>
       ))}
     </>
