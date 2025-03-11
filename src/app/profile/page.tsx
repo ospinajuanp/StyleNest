@@ -7,9 +7,18 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import './profile.css'
 
+interface Profile {
+    id: number;
+    created_at: string;
+    name: string;
+    imageUrl: string;
+    supplyList: string;
+    description: string;
+}
+
 export default function Page() {
     const router = useRouter();
-    const [dataProfile, setDataProfile] = useState<any>(null);
+    const [dataProfile, setDataProfile] = useState<Profile | null>(null);
     const [profile, setProfile] = useState(0);
     const [services, setServices] = useState([0]);
 
