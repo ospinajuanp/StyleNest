@@ -1,9 +1,9 @@
 import PageProfile from "./PageProfile";
 
-export default function Page({ params }: { params: { slug: string } }) {
-    
-    // by placing in the code the format that mateo wants
-
-    const { slug } = params;
+export default async function Page({
+    params,
+    }: { params: Promise<{ slug: string }> }) {
+    const resolvedParams = await params;
+    const { slug } = resolvedParams;
     return <PageProfile slug={slug} />;
-}
+} 
