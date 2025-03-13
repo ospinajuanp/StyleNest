@@ -16,6 +16,17 @@
     width: 19.5rem;
     height: 4rem;
 }
+.profile-appointment,
+.profile-appointment_link {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+.profile-appointment_link:hover{
+    transform: scale(1.1);
+    background-color: var(--color-accent);
+    transition: transform 0.3s ease-in-out;
+}
+
 .profile-appointment_link{
     width: 100%;
     height: 100%;
@@ -216,6 +227,7 @@
     margin: .5rem 1rem;
     font-size: 18px;
     text-align: left;
+    color: var(--color-background);
 }
 
 .price-table th, .price-table td {
@@ -229,12 +241,9 @@
 }
 
 .price-table tr {
-    background-color: #f2f2f2;
+    background-color: var(--color-text);
 }
 
-.price-table tr:hover {
-    background-color: var(--color-accent);
-}
 
 .profile-works{
     min-width: 20.5rem;

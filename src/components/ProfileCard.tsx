@@ -9,7 +9,7 @@ const ProfileCard = ({ profile }: { profile: { id: number, created_at: string, n
 
     const goToProfile = () => {
         sessionStorage.setItem('selectedProfile', JSON.stringify(profile));
-        router.push('/profile');
+        router.push(`/profile/${profile.id}`);
     };
 
     return (

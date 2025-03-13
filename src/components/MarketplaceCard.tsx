@@ -8,8 +8,7 @@ const MarketplaceCard = ({ profile } : { profile : { id: number,created_at: stri
     const router = useRouter();
 
     const goToProfile = () => {
-        sessionStorage.setItem('selectedProfile', JSON.stringify(profile));
-        router.push('/profile');
+        router.push(`/profile/${profile.id}`);
     };
 
     if (!profile) return <h1>No hay datos</h1>;
