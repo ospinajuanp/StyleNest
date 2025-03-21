@@ -40,19 +40,15 @@ export default function ProfilePage({ slug }: { slug: string }) {
         const elements = {
             services: document.getElementById('services'),
             about: document.getElementById('about'),
-            price: document.getElementById('price'),
             servicesContent: document.getElementById('services-content'),
             aboutContent: document.getElementById('about-content'),
-            priceContent: document.getElementById('price-content')
         };
         // Ensure all elements exist before proceeding
         if (
             !elements.services ||
-            !elements.about ||
-            !elements.price ||
+            !elements.about ||            
             !elements.servicesContent ||
-            !elements.aboutContent ||
-            !elements.priceContent
+            !elements.aboutContent             
         ) {
             return;
         }
@@ -62,14 +58,14 @@ export default function ProfilePage({ slug }: { slug: string }) {
         } = {
             0: { tab: elements.services, content: elements.servicesContent },
             1: { tab: elements.about, content: elements.aboutContent },
-            2: { tab: elements.price, content: elements.priceContent }
+            
         };
         // Clear active state for all tabs and hide all contents
         // For tabs, remove the 'selected' class; for contents, set the class to 'hidden'
-        [elements.services, elements.about, elements.price].forEach(tab =>
+        [elements.services, elements.about ].forEach(tab =>
             tab.classList.remove('selected')
         );
-        [elements.servicesContent, elements.aboutContent, elements.priceContent].forEach(content =>
+        [elements.servicesContent, elements.aboutContent].forEach(content =>
             (content.className = 'hidden')
         );
         // Set active state for the current profile
@@ -159,15 +155,12 @@ export default function ProfilePage({ slug }: { slug: string }) {
         {/* PROFILE INFO */}
         <div className="profile-info">
             <div className="profile-info_select">
-            <div id="services" className="selected" onClick={() => changeProfile(0)}>
-                SERVICES
-            </div>
-            <div id="about" onClick={() => changeProfile(1)}>
-                ABOUT
-            </div>
-            <div id="price" onClick={() => changeProfile(2)}>
-                PRICE
-            </div>
+                <div id="services" className="selected" onClick={() => changeProfile(0)}>
+                    SERVICES
+                </div>
+                <div id="about" onClick={() => changeProfile(1)}>
+                    ABOUT
+                </div>
             </div>
             <div className="profile-info_content">
             <div id="services-content" className="services visible">
@@ -188,30 +181,7 @@ export default function ProfilePage({ slug }: { slug: string }) {
             <div id="about-content" className="about hidden">
                 {dataProfile.description}
             </div>
-            <div id="price-content" className="price hidden">
-                <table className="price-table">
-                <thead>
-                    <tr>
-                    <th>Service</th>
-                    <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dataProfile.supplyList && dataProfile.supplyList.length > 0 ? (
-                    dataProfile.supplyList.split(",").map((supply: string, index: number) => (
-                        <tr key={index}>
-                        <td>{supply}</td>
-                        <td>40</td>
-                        </tr>
-                    ))
-                    ) : (
-                    <tr>
-                        <td colSpan={2}>No price</td>
-                    </tr>
-                    )}
-                </tbody>
-                </table>
-            </div>
+            
             </div>
         </div>
 
