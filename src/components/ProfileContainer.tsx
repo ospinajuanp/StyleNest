@@ -33,7 +33,7 @@ const ProfileContainer = ({ data }: ListSuppliersProps) => {
     return (
         <div className='container'>
             <div className='container-title'>
-                <h2>Top Profiles</h2>
+                <h2>Perfiles Top</h2>
             </div>
             <div 
                 className='container-list profile-list' 

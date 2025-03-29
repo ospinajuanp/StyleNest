@@ -20,7 +20,6 @@ const ProfileCard = ({ profile }: { profile: { id: number, created_at: string, n
             <div className='profile-card-text'>
                 <div>{profile.name}</div>
                 <div className='light'>{profile.supplyList}</div>
-                <div>💲 40</div>
             </div>
         </div>
     );

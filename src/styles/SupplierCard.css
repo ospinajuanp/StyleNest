@@ -1,8 +1,29 @@
-.supplier-card-img {
-    width: 85%;
-    min-height: 60%;
-}
-
-.supplier-card-text {
-    font-size: .7rem;
-}
+.supplier-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .supplier-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #f3f4f6;
+    border-radius: 50%;
+    font-size: 1.5rem;
+  }
+  
+  .supplier-text {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
