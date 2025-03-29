@@ -123,7 +123,11 @@ li {
 } */
 
 /* Deactivate default styles of the main text labels */
-h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+h1 {
+  font-size:1.8rem;
+}
+
+h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   font-size: 1em;
   font-weight: inherit;
   font-style: inherit;

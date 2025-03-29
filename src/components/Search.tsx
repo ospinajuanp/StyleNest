@@ -22,7 +22,6 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
     event.preventDefault()
     //TODO: handle error
     const { data } = await searchUserSupplierByKeyword(searchTerm)
-    console.log(onSearch, data)
     onSearch(data ? data : [])
   }
 
@@ -31,7 +30,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
       <input
         className='form-search'
         type="text"
-        placeholder="Barbería, manicura, peluqería etc."
+        placeholder="Barbería, manicura..."
         value={searchTerm}
         onChange={handleInputChange}
       />
