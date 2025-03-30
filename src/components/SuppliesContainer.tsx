@@ -1,11 +1,11 @@
 // 'use server'
 
-import '@/styles/SupplierContainer.css';
+import '@/styles/SuppliesContainer.css';
 import SupplierCard from './SupplierCard';
 import { ListSuppliersProps } from './ListSuppliers';
 import { useRef, useState } from 'react';
 
-const SupplierContainer = ({ data }: ListSuppliersProps) => {
+const SuppliesContainer = ({ data }: ListSuppliersProps) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -39,10 +39,10 @@ const SupplierContainer = ({ data }: ListSuppliersProps) => {
   };
 
   return (
-    <section className="top-services px-4 py-6">
-      <h2 className="title text-2xl font-semibold mb-4">Top Services</h2>
+    <section className="top-services">
+      <h2 className="title">Servicios Top</h2>
       <div
-        className="supplier-list flex gap-4 overflow-x-auto whitespace-nowrap"
+        className="supplies-list"
         ref={scrollRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -62,4 +62,4 @@ const SupplierContainer = ({ data }: ListSuppliersProps) => {
   );
 };
 
-export default SupplierContainer;
+export default SuppliesContainer;

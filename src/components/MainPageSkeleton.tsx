@@ -1,8 +1,8 @@
 'use client'
 
-import SupplierContainer from '@/components/SupplierContainer'
+import SuppliesContainer from '@/components/SuppliesContainer'
 import Nav from '@/components/Nav'
-import{ ListSuppliersProps, Supplier } from './ListSuppliers'
+import { ListSuppliersProps, Supplier } from './ListSuppliers'
 import ProfileContainer from '@/components/ProfileContainer'
 import MarketplaceContainer from '@/components/MarketplaceContainer'
 import '@/styles//MainPageSkeleton.css'
@@ -14,14 +14,15 @@ export default function MainPageSkeleton({ data }: ListSuppliersProps) {
   const handleSearch = (results: Supplier[]) => {
     setSearchResults(results);
   }
-  
+
   return (
     <>
       <Nav onSearch={handleSearch} />
-      <SupplierContainer data={searchResults.length > 0 ? searchResults : data}/>
-      <ProfileContainer data={ searchResults.length > 0 ? searchResults : data }/>
-      <MarketplaceContainer data={ searchResults.length > 0 ? searchResults : data }/>
-      {/* <ListSuppliers data={searchResults.length > 0 ? searchResults : data} /> */}
+      <main className="main-container">
+        <SuppliesContainer data={searchResults.length > 0 ? searchResults : data} />
+        <ProfileContainer data={searchResults.length > 0 ? searchResults : data} />
+        <MarketplaceContainer data={searchResults.length > 0 ? searchResults : data} />
+      </main>
     </>
   )
 }

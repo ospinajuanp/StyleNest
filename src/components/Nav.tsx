@@ -12,7 +12,7 @@ const Nav: React.FC<NavProps> = ({ onSearch }) => {
   return (
     <nav className='nav'>
       <div className='nav-profile'>
-        <h1>Bienvenido</h1>
+        <h1>Bienvenido a Teiker</h1>
       </div>
       <Search onSearch={onSearch}/>
     </nav>
