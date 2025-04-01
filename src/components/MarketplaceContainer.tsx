@@ -5,22 +5,18 @@ import '@/styles/MarketplaceContainer.css';
 
 const MarketplaceContainer: React.FC<ListSuppliersProps> = ({ data }) => {
   return (
-    <div className="container">
-      <div className="container-title">
-        <h2>Marketplace ({data?.length})</h2>
-      </div>
-
+    <section className="container">
+      <h1 className="container-title">Los mejores cerca de tí</h1>
       <div className="marketplace-list">
         {data && data.length > 0 ? (
           data.map((profile) => (
             <MarketplaceCard key={profile.id} profile={profile} />
           ))
-
         ) : (
           <p className="no-data-message">No hay perfiles disponibles.</p>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

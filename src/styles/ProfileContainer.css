@@ -1,3 +1,7 @@
+.top-profiles {
+  padding: 1rem 0;
+}
+
 .profile-list>* {
   width: 50%;
   max-width: 250px;
