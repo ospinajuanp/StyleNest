@@ -3,23 +3,27 @@
 import '@/styles/ProfileCard.css';
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
+import { supplyListMatcher } from '@/lib/db/utils/supplyListConstants';
 
 const ProfileCard = ({ profile }: { profile: { id: number, created_at: string, name: string, imageUrl: string, supplyList: string, description: string } }) => {
   const router = useRouter();
 
   const goToProfile = () => {
-    sessionStorage.setItem('selectedProfile', JSON.stringify(profile));
     router.push(`/profile/${profile.id}`);
+  };
+
+  const formatSupplyList = (supplyList: string): string => {
+    return supplyList.split(',').map((supply) => supplyListMatcher(supply)).join(', ');
   };
 
   return (
     <div className='profile-card' onClick={goToProfile}>
-      <div className='container-card-img profile-card-img'>
-        <Image src={profile.imageUrl} alt={profile.name} width={400} height={400} />
-      </div>
+      <Image className='profile-card-img' src={profile.imageUrl} alt={profile.name} width={400} height={400} />
       <div className='profile-card-text'>
-        <div>{profile.name}</div>
-        <div className='light'>{profile.supplyList}</div>
+        <p>{profile.name}</p>
+        <p className='light'>
+          {formatSupplyList(profile.supplyList)}
+        </p>
       </div>
     </div>
   );

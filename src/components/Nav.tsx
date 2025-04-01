@@ -2,7 +2,7 @@ import '@/styles/Nav.css'
 
 import React from 'react';
 import Search from '@/components/Search'
-import { Supplier } from './ListSuppliers';
+import { Supplier } from '../lib/db/utils/ListSuppliers';
 
 interface NavProps {
   onSearch: (results: Supplier[]) => void;

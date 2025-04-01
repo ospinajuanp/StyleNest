@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { searchUserSupplierByKeyword } from '@/lib/api'
-import { Supplier } from './ListSuppliers'
+import { Supplier } from '../lib/db/utils/ListSuppliers'
 
 interface SearchProps {
   onSearch: (results: Supplier[]) => void;

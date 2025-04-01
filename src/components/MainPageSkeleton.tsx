@@ -2,7 +2,7 @@
 
 import SuppliesContainer from '@/components/SuppliesContainer'
 import Nav from '@/components/Nav'
-import { ListSuppliersProps, Supplier } from './ListSuppliers'
+import { ListSuppliersProps, Supplier } from '../lib/db/utils/ListSuppliers'
 import ProfileContainer from '@/components/ProfileContainer'
 import MarketplaceContainer from '@/components/MarketplaceContainer'
 import '@/styles//MainPageSkeleton.css'

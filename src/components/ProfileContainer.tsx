@@ -1,7 +1,7 @@
 import '@/styles/ProfileContainer.css';
 import '@/styles/CommonTopStyles.css';
 import ProfileCard from './ProfileCard';
-import { ListSuppliersProps } from './ListSuppliers';
+import { ListSuppliersProps } from '../lib/db/utils/ListSuppliers';
 import { useRef, useState } from 'react';
 
 const ProfileContainer = ({ data }: ListSuppliersProps) => {

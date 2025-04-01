@@ -1,7 +1,7 @@
 //  This is a temporay util function to filter users based on the keyword
 //  This function will be replaced by the actual search function in the database
 
-import { Supplier } from "@/components/ListSuppliers";
+import { Supplier } from "@/lib/db/utils/ListSuppliers";
 
 export const filteredUsers = (keyword: string, users: Supplier[]) => {
   users.filter(user => {

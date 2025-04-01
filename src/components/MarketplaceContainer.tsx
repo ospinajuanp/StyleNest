@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListSuppliersProps } from './ListSuppliers';
+import { ListSuppliersProps } from '../lib/db/utils/ListSuppliers';
 import MarketplaceCard from './MarketplaceCard';
 import '@/styles/MarketplaceContainer.css';
 
