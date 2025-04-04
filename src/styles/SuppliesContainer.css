@@ -1,0 +1,21 @@
+.top-services {
+  padding: 1rem 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.supplies-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.no-data-message {
+  color: #6b7280;
+}

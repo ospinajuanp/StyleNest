@@ -1,0 +1,17 @@
+.top-profiles {
+  padding: 1rem 0;
+}
+
+.profile-list>* {
+  width: 50%;
+  max-width: 250px;
+  min-width: 200px;
+  height: 15rem;
+}
+
+.profile-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}

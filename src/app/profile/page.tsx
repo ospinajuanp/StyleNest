@@ -1,7 +1,9 @@
 export default function Page() {
+    
     return (
-        <div>
-            <h1>PROFILE</h1>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "3rem" }}>
+            PAGE 404
         </div>
-    )
+    );
+
 }
